@@ -1,17 +1,20 @@
 function formatString(input: string, toUpper?: boolean): string {
   return toUpper !== false ? input.toUpperCase() : input.toLocaleLowerCase();
 }
-//
+
+
 function filterByRating(
   items: { title: string; rating: number }[]
 ): { title: string; rating: number }[] {
   return items.filter((item) => item.rating >= 4);
 }
-//
+
+
 function concatenateArrays<T>(...arrays: T[][]): T[] {
   return arrays.reduce((result, current) => result.concat(current), []);
 }
-//
+
+
 class Vehicle {
   private make: string;
   private year: number;
@@ -37,12 +40,13 @@ class Car extends Vehicle {
     return `Model: ${this.model}`;
   }
 }
-//
+
+
 
 function processValue(value: string | number): number {
   return typeof value === "string" ? value.length : value * 2;
 }
-//
+
 
 interface Product {
   name: string;
@@ -55,7 +59,7 @@ function getMostExpensiveProduct(products: Product[]): Product | null {
     current.price > max.price ? current : max
   );
 }
-//
+
 
 enum Day {
   Monday,
@@ -68,10 +72,9 @@ enum Day {
 }
 
 function getDayType(day: Day): string {
-  return day === Day.Friday || day === Day.Saturday ? "Weekend" : "Weekday";
+  return day === Day.Saturday || day === Day.Sunday ? "Weekend" : "Weekday";
 }
-// console.log(getDayType(Day.Monday));
-//
+
 
 async function squareAsync(n: number): Promise<number> {
   return new Promise((resolve, reject) => {
@@ -82,4 +85,4 @@ async function squareAsync(n: number): Promise<number> {
     }
   });
 }
-console.log(squareAsync(4).then(console.log));
+ 
